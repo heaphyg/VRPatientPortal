@@ -2,10 +2,10 @@ const mysql = require('mysql2/promise');
 
 async function setupDatabase() {
     const connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root', 
-        password: 'password', 
-        database: 'patient_portal'
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
     });
 
     try {
@@ -43,7 +43,6 @@ async function setupDatabase() {
 
         await connection.query(clearTableQuery);
         await connection.query(insertQuery, [dummyData]);
-
 
         const [rows] = await connection.execute('SELECT COUNT(*) as count FROM patient_report');
         console.log(`${rows[0].count} records successfully created.`);

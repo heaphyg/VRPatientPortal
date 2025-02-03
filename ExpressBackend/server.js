@@ -1,12 +1,14 @@
-require('dotenv').config(); // set env variable
 const express = require('express');
-const cors = require('cors'); // what does this do - it's a security measure 
-const db = require('./db');
+const cors = require('cors');
+require('./setup');
+// keeping these here for discussion
+// require('dotenv').config(); // set env variable
+// const db = require('./db');
+
 
 const app = express();
 
-// red black tree? a kind of binary search tree
-app.use(cors()); // allows any origin
+app.use(cors());
 app.use(express.json());
 
 const patientRoutes = require('./routes/patientRoutes');
