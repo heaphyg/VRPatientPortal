@@ -29,8 +29,9 @@ const formattedDate = (dateString) => {
 
 const reportRequiresAlert = (item) => {
     if (!item || !item.summary) return false;
-    return item.summary.toLowerCase().includes('tachycardia') || 
-           item.summary.toLowerCase().includes('arrhythmia');
+    const summary = item.summary.toLowerCase();
+    return summary.includes('tachycardia') || 
+           summary.includes('arrhythmia');
 }
 </script>
 
@@ -76,7 +77,6 @@ const reportRequiresAlert = (item) => {
                     <td class="padded-cell">
                         <span
                             v-if="reportRequiresAlert(item)"
-                            style="color: red; font-weight: bold;"
                             class="alert-span"
                             >
                             ALERT
@@ -101,6 +101,11 @@ th, td {
   max-height: 400px; /* Adjust as needed */
   overflow-y: auto;  /* Enables scrolling when content overflows */
   border: 1px solid #ddd; /* Optional: adds a border for structure */
+}
+
+.alert-span {
+  color: red;
+  font-weight: bold;
 }
 
 </style>
