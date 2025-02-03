@@ -38,16 +38,15 @@ const reportRequiresAlert = (item) => {
     <div>
         <div class="patient-reports-container">
             <h2>Patient Reports</h2>
-            <div style="display: flex; gap: 12px">
-                <input 
+            <div class="search-panel">
+                <input id="search-input"
                     v-model="searchTerm"
                     type="text" 
                     placeholder="Search" 
-                    style="padding: 4px"
                     @keyup.enter="handleSearchInput"
                 >
                 <button
-                    style="padding: 4px 12px" @click="handleSearchInput">Search
+                    id="search-button" @click="handleSearchInput">Search
                 </button>
             </div>  
         </div>
@@ -104,12 +103,25 @@ th, td {
 
 .patient-reports-container {
   display: flex;
-  gap: 50px
+  gap: 50px;
+}
+
+.search-panel {
+  display: flex; 
+  gap: 12px;
 }
 
 .alert-span {
   color: red;
   font-weight: bold;
+}
+
+#search-input {
+  padding: 4px;
+}
+
+#search-button {
+  padding: 4px 12px;
 }
 
 </style>
