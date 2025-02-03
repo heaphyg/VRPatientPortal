@@ -12,7 +12,6 @@ const emit = defineEmits(['search']);
 const searchTerm = ref('');
 
 const handleSearchInput = () => {
-    // console.log(`Searcsh event emitted with: ${searchTerm.value}`);
     emit('search', searchTerm.value);
 };
 
@@ -37,7 +36,7 @@ const reportRequiresAlert = (item) => {
 
 <template>
     <div>
-        <div style="display: flex; gap: 50px">
+        <div class="patient-reports-container">
             <h2>Patient Reports</h2>
             <div style="display: flex; gap: 12px">
                 <input 
@@ -94,13 +93,18 @@ const reportRequiresAlert = (item) => {
 }
 
 th, td {
-  border: 1px solid #ddd; /* Optional: add borders to cells */
+  border: 1px solid #ddd;
 }
 
 .reports-container {
-  max-height: 400px; /* Adjust as needed */
-  overflow-y: auto;  /* Enables scrolling when content overflows */
-  border: 1px solid #ddd; /* Optional: adds a border for structure */
+  max-height: 400px; 
+  overflow-y: auto;  
+  border: 1px solid #ddd; 
+}
+
+.patient-reports-container {
+  display: flex;
+  gap: 50px
 }
 
 .alert-span {
