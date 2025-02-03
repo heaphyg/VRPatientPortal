@@ -3,8 +3,6 @@ import { test, expect } from '@playwright/test';
 const URL = 'http://localhost:5173';
 
 test.describe('Patient Reports Table Component Tests', () => {
-
-    // Run node VRPatientPortalBackend/setup.js to build data for tests
     // Currently each test is running 3 times
     
     test('should display patient report header correctly', async ({ page }) => {
