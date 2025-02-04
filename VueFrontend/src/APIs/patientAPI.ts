@@ -4,7 +4,7 @@ export const fetchPatientReports = async (searchTerm?: string): Promise<string[]
   try {
     const url = new URL(`${BASE_URL}/reports`);
     if (searchTerm) {
-      url.searchParams.append('search', searchTerm);
+      url.searchParams.append('search', searchTerm.trim());
     }
 
     const response = await fetch(url);
