@@ -25,6 +25,8 @@ git clone https://github.com/heaphyg/VRPatientPortal
 
 ```shell
    cd VRPatientPortal/ExpressBackend
+```
+```shell
    npm ci
 ```
 
@@ -41,6 +43,8 @@ git clone https://github.com/heaphyg/VRPatientPortal
 
 ```shell
    cd VRPatientPortal/VueFrontend
+```
+```shell
    npm ci
 ```
 
