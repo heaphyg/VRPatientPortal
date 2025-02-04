@@ -21,10 +21,11 @@ git clone https://github.com/heaphyg/VRPatientPortal
 
 ### Set Up the Backend (Express and MySQL)
 
-1. Open a terminal and Navigate to the ExpressBackend directory
+1. Open a terminal and Navigate to the ExpressBackend directory and install dependencies
 
 ```shell
    cd VRPatientPortal/ExpressBackend
+   npm ci
 ```
 
 2. Launch the backend using Docker Compose:
