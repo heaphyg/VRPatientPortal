@@ -37,7 +37,6 @@ const getAllPatientReports = async (req, res) => {
         cacheExpiration = now + CACHE_DURATION;
         return res.json(rows);
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: error });
     }
 };
