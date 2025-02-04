@@ -8,7 +8,7 @@
   "name": "vrpatientportalbackend",
   "version": "1.0.0",
   "description": "List out Patient reports and filter by patient name",
-  "main": "setup.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"

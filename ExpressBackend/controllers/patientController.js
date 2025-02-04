@@ -6,10 +6,9 @@ const CACHE_DURATION = 60 * 1000; // 1 minute in milliseconds
 
 const getAllPatientReports = async (req, res) => {
     try {
-        const now = Date.now();
+        let query = 'SELECT * FROM patient_report';
         const queryParams = [];
-        const searchParameter = req.query.search
-        let query = 'SELECT * FROM patient_report'; 
+        const searchParameter = req.query.search;
 
         if (searchParameter) {
             if (searchParameter.length > 50) {
@@ -20,6 +19,8 @@ const getAllPatientReports = async (req, res) => {
             queryParams.push(`%${searchParameter}%`);
         }
 
+        const now = Date.now();
+
         if (!searchParameter && cachedPatientReports && cacheExpiration && now < cacheExpiration) {
             console.log("Serving from cache"); // log for demo purposes
             return res.json(cachedPatientReports);
@@ -27,10 +28,12 @@ const getAllPatientReports = async (req, res) => {
 
         query += ' ORDER BY date';
         const [rows] = await db.query(query, queryParams);
+
         if (!searchParameter) {
             // Only cache unfiltered results set
             cachedPatientReports = rows;
         }
+
         cacheExpiration = now + CACHE_DURATION;
         return res.json(rows);
     } catch (error) {

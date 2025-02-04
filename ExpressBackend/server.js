@@ -5,7 +5,6 @@ require('./setup');
 // require('dotenv').config(); // set env variable
 // const db = require('./db');
 
-
 const app = express();
 
 app.use(cors());
