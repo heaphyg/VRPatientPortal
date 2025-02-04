@@ -36,7 +36,6 @@ const getAllPatientReports = async (req, res) => {
         cacheExpiration = now + CACHE_DURATION;
         return res.json(rows);
     } catch (error) {
-        // sending logs to AWS cloudwatch
         res.status(500).json({ message: error });
     }
 };
