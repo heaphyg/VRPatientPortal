@@ -67,7 +67,7 @@ const reportRequiresAlert = (item) => {
             </thead>
 
             <tbody>
-                <tr v-for="item in items" :key="item">
+                <tr v-for="item in items" :key="item.id">
                     <td class="padded-cell">{{ item.id }}</td>
                     <td class="padded-cell">{{ item.patient_name }}</td>
                     <td class="padded-cell">{{ item.summary }}</td>
@@ -93,12 +93,6 @@ const reportRequiresAlert = (item) => {
 
 th, td {
   border: 1px solid #ddd;
-}
-
-.reports-container {
-  max-height: 400px; 
-  overflow-y: auto;  
-  border: 1px solid #ddd; 
 }
 
 .patient-reports-container {

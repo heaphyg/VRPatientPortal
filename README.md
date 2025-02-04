@@ -36,10 +36,11 @@ git clone https://github.com/heaphyg/VRPatientPortal
 ### Set Up the Frontend (Vue.js)
 
 1. Open a separate terminal window.
-2. Navigate to the VueFrontend directory
+2. Navigate to the VueFrontend directory and install dependencies
 
 ```shell
    cd VRPatientPortal/VueFrontend
+   npm ci
 ```
 
 3. To start the Vue.js server, run:
