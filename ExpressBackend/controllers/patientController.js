@@ -7,10 +7,11 @@ const CACHE_DURATION = 60 * 1000; // 1 minute in milliseconds
 const getAllPatientReports = async (req, res) => {
     try {
         let query = 'SELECT * FROM patient_report';
-        const searchParameter = req.query.search;
+        let searchParameter = req.query.search;
         const queryParams = [];
 
         if (searchParameter) {
+            searchParameter = searchParameter.trim();
             if (searchParameter.length > 50) {
                 return res.status(400).json({ message: 'Search parameter may not exceed 50 characters in length' });
             }
